@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Biowebapp</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center">Biowebapp</h1>
+      <p class="text-center">Web with Bioinformatics data.</p>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Genus species</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for organism in organisms %}
+          <tr>
+            <td>
+              <a href="/organism/{{ organism.pk }}"
+                >{{ organism.genus }} {{ organism.species }}</a
+              >
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Taxa Information</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+
+    <style>
+      .a {
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center">Taxa id: {{ organism.taxa_id }}</h1>
+      <p class="text-center">
+        <a href="http://127.0.0.1:8080/genus_species" class="a"
+          >List with all organism</a
+        >
+      </p>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Genus</th>
+            <th>Species</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ organism.genus }}</td>
+            <td>{{ organism.species }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

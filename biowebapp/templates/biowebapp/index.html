@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home Page for API endpoints</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <!--Including bootstrap-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!--Change the color of the active and inactive elements of the list -->
+    <!--Change color of background-->
+    <!--Change H1 style -->
+    <style>
+      .list-group-item.active {
+        background-color: rgb(129, 150, 103);
+      }
+
+      .list-group-item:not(.active) {
+        background-color: rgb(209, 175, 224);
+        font-weight: bold;
+      }
+
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+
+      body {
+        background: linear-gradient(rgb(4, 74, 149), rgb(99, 150, 198));
+      }
+
+      h1 {
+        color: white;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <!-- The bootstrap list comes from here. https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_list_group_custom&stacked=h -->
+
+  <body>
+    <!--List of all required APIs -->
+    <div class="container">
+      <h1>API endpoints</h1>
+      <div class="list-group">
+        <a href="/api/protein/add_protein_id" class="list-group-item active">
+          <h4 class="list-group-item-heading">
+            1. POST http://127.0.0.1:8080/api/protein/-add a new record.
+            Validation via serializer
+          </h4>
+          <p class="list-group-item-text">POST protein</p>
+        </a>
+
+        <a href="/api/protein/A0A016S8J7" class="list-group-item">
+          <h4 class="list-group-item-heading">
+            2. GET http://127.0.0.1:8080/api/protein/[PROTEIN ID]-return the
+            protein sequence and all we know about it.
+          </h4>
+          <p class="list-group-item-text">
+            http://127.0.0.1:8080/api/protein/A0A016S8J7
+          </p>
+        </a>
+
+        <a href="/api/pfam/PF00360" class="list-group-item active">
+          <h4 class="list-group-item-heading">
+            3. GET http://127.0.0.1:8080/api/pfam/[PFAM ID] - return the domain
+            and it's description.
+          </h4>
+          <p class="list-group-item-text">
+            http://127.0.0.1:8080/api/pfam/PF00360/
+          </p>
+        </a>
+
+        <a href="/api/proteins/30076/" class="list-group-item">
+          <h4 class="list-group-item-heading">
+            4. GET http://127.0.0.1:8080/api/proteins/[TAXA ID] - return a list
+            of all proteins for a given organism
+          </h4>
+          <p class="list-group-item-text">
+            http://127.0.0.1:8080/api/proteins/30076/
+          </p>
+        </a>
+
+        <a href="/api/pfams/55661" class="list-group-item active">
+          <h4 class="list-group-item-heading">
+            5. GET http://127.0.0.1:8080/api/pfams/[TAXA ID] - return a list of
+            all domains in all the proteins for a given organism.
+          </h4>
+          <p class="list-group-item-text">
+            http://127.0.0.1:8080/api/pfams/55661
+          </p>
+        </a>
+
+        <a href="/api/coverage/A0A023QKL5" class="list-group-item">
+          <h4 class="list-group-item-heading">
+            6. GET http://127.0.0.1:8080/api/coverage/[PROTEIN ID] - return the
+            domain coverage for a given protein. That is Sum of the protein
+            domain lengths (start-stop)/length of protein.
+          </h4>
+          <p class="list-group-item-text">
+            http://127.0.0.1:8080/api/coverage/A0A023QKL5
+          </p>
+        </a>
+      </div>
+    </div>
+
+    <div class="container">
+      <h1>Organism list with all information</h1>
+      <div class="list-group">
+        <a href="/genus_species" class="list-group-item active">
+          <h4 class="list-group-item-heading">
+            List of all organisms with all information
+          </h4>
+          <p class="list-group-item-text">
+            http://127.0.0.1:8080/genus_species
+          </p>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
